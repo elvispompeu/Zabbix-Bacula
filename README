@@ -41,3 +41,5 @@ UserParameter=bacula.volume.storage[*],/etc/zabbix/externalscripts/bacula.volume
 UserParameter=bacula.incremental.size[*],/etc/zabbix/externalscripts/bacula.backup.size.sh incremental $1
 UserParameter=bacula.diferencial.size[*],/etc/zabbix/externalscripts/bacula.backup.size.sh diferencial $1
 UserParameter=bacula.full.size[*],/etc/zabbix/externalscripts/bacula.backup.size.sh full $1
+
+Créditos: Elvis Suffi Pompeu (elvis.pompeu@4linux.com.br / elvis.suffipompeu@hotmail.com) e Alisson Machado (alisson.machado@4linux.com.br)
