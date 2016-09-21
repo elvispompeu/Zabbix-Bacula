@@ -1,39 +1,37 @@
+![N|Solid](http://www.linuxsysadmin.com.br/wp-content/uploads/2015/08/cropped-linuxsysadmin2.png)
+Site: http://www.linuxsysadmin.com.br
+
 # Modo de uso
 
 Edite o /etc/sudoers, e adicione a seguinte linha:
 
-# vim /etc/sudoers
-
-zabbix ALL=NOPASSWD:/sbin/bconsole
+<br>```# vim /etc/sudoers```
+<br>```zabbix ALL=NOPASSWD:/sbin/bconsole```
 
 O cominho do bconsole pode estar diferente em diversas distribuições, para descobrir o path correto, execute:
-
-# which bconsole
+<br>```# which bconsole```
 
 Mova os scripts abaixo para dentro de /etc/zabbix/externalscripts:
 
-bacula.backup.size.sh
+ - bacula.backup.size.sh
 bacula.backup.status.sh
 bacula.jobname.discovery.sh
 bacula.volume.gravacao.sh
 bacula.volume.storage.sh
 
 Após move-los, conceda as devidas permissões:
-
-chown zabbix. /etc/zabbix/externalscripts/*
-chmod +x /etc/zabbix/externalscripts/*
+<br>```chown zabbix. /etc/zabbix/externalscripts/*```
+<br>```chmod +x /etc/zabbix/externalscripts/*```
 
 Descomente a linha Include do zabbix_agentd.conf, e adicione o diretório "userparameters":
-
-# vim /etc/zabbix/zabbix_agentd.conf
-Include=/etc/zabbix/userparameters/
-:x!
-# mkdir /etc/zabbix/userparameters
+<br>```# vim /etc/zabbix/zabbix_agentd.conf```
+<br>```Include=/etc/zabbix/userparameters/```
+<br>```:x!```
+<br>```# mkdir /etc/zabbix/userparameters```
 
 Crie o arquivo zabbix.bacula.conf dentro do diretório userparameters e adicione as linhas abaixo:
 
-# touch /etc/zabbix/userparameters/zabbix.bacula.conf
-# vim /etc/zabbix/userparameters/zabbix.bacula.conf
+<br>```# vim /etc/zabbix/userparameters/zabbix.bacula.conf```
 UserParameter=bacula.jobname.discovery,/etc/zabbix/externalscripts/bacula.jobname.discovery.sh
 UserParameter=bacula.volume.gravacao[*],/etc/zabbix/externalscripts/bacula.volume.gravacao.sh $1
 UserParameter=bacula.backup.status[*],/etc/zabbix/externalscripts/bacula.backup.status.sh $1
