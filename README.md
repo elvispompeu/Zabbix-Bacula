@@ -1,4 +1,4 @@
-
+# Modo de uso
 
 Edite o /etc/sudoers, e adicione a seguinte linha:
 
