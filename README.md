@@ -4,7 +4,6 @@ Site: http://www.linuxsysadmin.com.br
 # Modo de uso
 
 Edite o /etc/sudoers, e adicione a seguinte linha:
-
 <br>```# vim /etc/sudoers```
 <br>```zabbix ALL=NOPASSWD:/sbin/bconsole```
 
@@ -14,10 +13,10 @@ O cominho do bconsole pode estar diferente em diversas distribuições, para des
 Mova os scripts abaixo para dentro de /etc/zabbix/externalscripts:
 
  - bacula.backup.size.sh
-bacula.backup.status.sh
-bacula.jobname.discovery.sh
-bacula.volume.gravacao.sh
-bacula.volume.storage.sh
+ - bacula.backup.status.sh
+ - bacula.jobname.discovery.sh
+ - bacula.volume.gravacao.sh
+ - bacula.volume.storage.sh
 
 Após move-los, conceda as devidas permissões:
 <br>```chown zabbix. /etc/zabbix/externalscripts/*```
