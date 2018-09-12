@@ -31,6 +31,7 @@ Descomente a linha Include do zabbix_agentd.conf, e adicione o diretório "userp
 Crie o arquivo zabbix.bacula.conf dentro do diretório userparameters e adicione as linhas abaixo:
 
 <br>```# vim /etc/zabbix/userparameters/zabbix.bacula.conf```
+```
 UserParameter=bacula.jobname.discovery,/etc/zabbix/externalscripts/bacula.jobname.discovery.sh
 UserParameter=bacula.volume.gravacao[*],/etc/zabbix/externalscripts/bacula.volume.gravacao.sh $1
 UserParameter=bacula.backup.status[*],/etc/zabbix/externalscripts/bacula.backup.status.sh $1
@@ -38,5 +39,5 @@ UserParameter=bacula.volume.storage[*],/etc/zabbix/externalscripts/bacula.volume
 UserParameter=bacula.incremental.size[*],/etc/zabbix/externalscripts/bacula.backup.size.sh incremental $1
 UserParameter=bacula.diferencial.size[*],/etc/zabbix/externalscripts/bacula.backup.size.sh diferencial $1
 UserParameter=bacula.full.size[*],/etc/zabbix/externalscripts/bacula.backup.size.sh full $1
-
+```
 Créditos: Elvis Suffi Pompeu (elvis.pompeu@4linux.com.br / elvis.suffipompeu@hotmail.com) e Alisson Machado (alisson.machado@4linux.com.br)
